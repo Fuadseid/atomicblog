@@ -1,6 +1,6 @@
 import { createContext, useContext, useState } from "react";
 import { faker } from "@faker-js/faker";
-
+//1 CREATING PROVIDER
 const PostContext = createContext();
 
 function createRandomPost() {
@@ -35,6 +35,7 @@ function Postprovider({children}){
         setPosts([]);
       }
     return (
+        //2 PASS VALUE
     <PostContext.Provider
     value={{
       posts: searchedPosts,
@@ -48,6 +49,7 @@ function Postprovider({children}){
 );
 
 }
+//3 USE CONSUMER
 function usePosts(){
     const context = useContext(PostContext);
     return context;
